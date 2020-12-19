@@ -3,22 +3,43 @@ import Image from 'gatsby-image'
 import { Link } from 'gatsby'
 import { graphql, useStaticQuery } from 'gatsby'
 
-//import SocialLinks from "../contants/SocialLinks"
-// ...GatsbyImageSharpFluid
+import SocialLinks from "../contants/socialLinks"
+
 
 const query = graphql`
 	{
-		file(relativePath: {eq: "dh-headshot.jpg"}) {
+		file(relativePath: {eq: "dh-headshot-2.jpg"}) {
 			childImageSharp {
 				fluid {
-					src
+					...GatsbyImageSharpFluid
 				}
 			}
 		}
   	}
-	`
+`
+
 const Hero = () => {
-	return <h2>Hero Component</h2>
+	//const data = useStaticQuery(query)
+	//console.log(data)
+	const {file: {childImageSharp: { fluid },},} = useStaticQuery(query)
+
+	return <header className="hero">
+			<div className="section-center hero-center">
+				<article className="hero-info">
+					<div>
+						<div className="underline">
+							<h1>Hi, i'm Danniel</h1>
+							<h4>Freelance, web, mobile UI/UX Designer</h4>
+							<Link to="/contact" className="btn">
+								Contact Me!
+							</Link>
+							{/* <SocialLinks /> */}
+						</div>
+					</div>
+				</article>
+				<Image fluid={fluid} className="hero-img" />
+			</div>
+		</header>
 }
 
 export default Hero
