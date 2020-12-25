@@ -3,6 +3,7 @@ module.exports = {
     title: `Danniel Hansel Portfolio`,
     description: `This is my Portfolio Site.`,
     author: `@dannielhansel`,
+    siteUrl: 'https://danniel-hansel.netlify.app'
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

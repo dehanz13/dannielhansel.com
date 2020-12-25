@@ -3,7 +3,7 @@ import Image from 'gatsby-image'
 import { Link } from 'gatsby'
 import { graphql, useStaticQuery } from 'gatsby'
 
-import SocialLinks from "../contants/socialLinks"
+//import SocialLinks from "../constants/socialLinks"
 
 
 const query = graphql`
@@ -28,8 +28,8 @@ const Hero = () => {
 				<article className="hero-info">
 					<div>
 						<div className="underline">
-							<h1>Hi, i'm Danniel</h1>
-							<h4>Freelance, web, mobile UI/UX Designer</h4>
+							<h1>Hi, I'm Danniel</h1>
+							<h4>Freelance, web, mobile UI/UX Designer, and Blogger</h4>
 							<Link to="/contact" className="btn">
 								Contact Me!
 							</Link>
